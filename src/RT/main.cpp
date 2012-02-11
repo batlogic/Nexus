@@ -1,0 +1,4 @@
+long main()
+{
+	return 'ASIO';
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no" ?>
+<NexusOptions>
+    <BankPath>D:\Dev\C++\Audio\Nexus\banks\New Bank.nexus</BankPath>
+    <Autosave>1</Autosave>
+    <ColorScheme>Dark</ColorScheme>
+    <Columns sort="1" dir="2">7,31,31,31</Columns>
+    <Window left="156" top="147" right="1064" bottom="687" state="5" />
+    <Tuning>0</Tuning>
+    <AudioPort>6</AudioPort>
+    <AudioOutDevice>Lautsprecher (High Definition Audio-Gerät)</AudioOutDevice>
+    <AudioOutChannel>0</AudioOutChannel>
+    <MidiInPorts>
+        <Port>In From MIDI Yoke:  1</Port>
+    </MidiInPorts>
+    <BufferSize>2048</BufferSize>
+    <SampleRate>44100</SampleRate>
+    <AudioRun>1</AudioRun>
+</NexusOptions>

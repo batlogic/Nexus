@@ -1,0 +1,7 @@
+*.bak
+ipch/*
+doc/*
+VstDebug/*
+VstRelease/*
+RtDebug/*
+RtRelease/*

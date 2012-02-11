@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="no" ?>
+<NexusOptions>
+    <BankPath></BankPath>
+    <Autosave>1</Autosave>
+    <ColorScheme></ColorScheme>
+    <Columns sort="0" dir="1"></Columns>
+    <Window left="0" top="0" right="850" bottom="450" state="5" />
+    <Tuning>0</Tuning>
+</NexusOptions>

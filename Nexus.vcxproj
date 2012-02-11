@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="RtDebug|Win32">
+      <Configuration>RtDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RtRelease|Win32">
+      <Configuration>RtRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="VstDebug|Win32">
+      <Configuration>VstDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="VstRelease|Win32">
+      <Configuration>VstRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D6F8650A-5425-4229-8B1C-D52278AE978E}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>STK_synth</RootNamespace>
+    <ProjectName>Nexus</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RtDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RtRelease|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RtDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RtRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RtDebug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(WindowsSdkDir)include;D:\Dev\C++\Lib\boost\boost_1_47_0;D:\Dev\C++\Lib\vstsdk2.4;$(ProjectDir)src</IncludePath>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <LibraryPath>$(VCInstallDir)lib;$(WindowsSdkDir)lib;$(ProjectDir)lib;</LibraryPath>
+    <ReferencePath>$(VCInstallDir)lib</ReferencePath>
+    <TargetExt>.exe</TargetExt>
+    <IntDir>$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VCInstallDir)include;$(WindowsSdkDir)include;$(ProjectDir)Src;</IncludePath>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <LibraryPath>$(VCInstallDir)lib;$(WindowsSdkDir)lib;$(ProjectDir)lib;</LibraryPath>
+    <ReferencePath>$(VCInstallDir)lib</ReferencePath>
+    <IntDir>$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RtRelease|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IncludePath>$(VCInstallDir)include;$(WindowsSdkDir)include;D:\Dev\C++\Lib\boost\boost_1_47_0;$(ProjectDir)src</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(WindowsSdkDir)lib;$(ProjectDir)lib;D:\Dev\C++\Audio\STK_synth\Shiny\lib</LibraryPath>
+    <TargetExt>.exe</TargetExt>
+    <IntDir>$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IncludePath>$(VCInstallDir)include;$(WindowsSdkDir)include;$(ProjectDir)Src;</IncludePath>
+    <LibraryPath>$(VCInstallDir)lib;$(WindowsSdkDir)lib;$(ProjectDir)lib;</LibraryPath>
+    <IntDir>$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RtDebug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;__LITTLE_ENDIAN__;__WINDOWS_ASIO__;__WINDOWS_DS__;__WINDOWS_MM__;USE_LIBPNG=1;_NEXUS_DEBUG_;TIXML_USE_TICPP;TIXML_USE_STL;_RT_AUDIO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BrowseInformation>true</BrowseInformation>
+      <CompileAsManaged>false</CompileAsManaged>
+      <ShowIncludes>false</ShowIncludes>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies);winmm.lib;Wsock32.lib;dsound.lib;libpngd.lib;zlibd.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <TurnOffAssemblyGeneration>false</TurnOffAssemblyGeneration>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapExports>false</MapExports>
+      <MapFileName>
+      </MapFileName>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <Profile>false</Profile>
+      <AdditionalLibraryDirectories>D:\Dev\C++\Lib\boost\boost_1_47_0\stage\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>"C:\Program Files\stampver\StampVer.exe" -v$(ProjectDir)stampver.inf -o3 -i4 -j4 $(TargetPath)</Command>
+      <Outputs>$(TargetDir)dummy;%(Outputs)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;__LITTLE_ENDIAN__;__WINDOWS_ASIO__;__WINDOWS_DS__;__WINDOWS_MM__;_NEXUS_DEBUG_;DEBUG;USE_LIBPNG=1;TIXML_USE_TICPP;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BrowseInformation>true</BrowseInformation>
+      <CompileAsManaged>false</CompileAsManaged>
+      <ShowIncludes>false</ShowIncludes>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies);winmm.lib;Wsock32.lib;dsound.lib;libpngd.lib;zlibd.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)vstplug.def</ModuleDefinitionFile>
+      <TurnOffAssemblyGeneration>false</TurnOffAssemblyGeneration>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>
+      </MapFileName>
+      <MapExports>
+      </MapExports>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "C:\AudioPrograms\Vstplugins\Synth\$(TargetName)$(TargetExt)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Deploy</Message>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <ShowProgress>false</ShowProgress>
+    </ResourceCompile>
+    <CustomBuildStep>
+      <Command>StampVer -v$(ProjectDir)stampver.inf -o3 -i4 -j4 $(TargetPath)</Command>
+      <Outputs>$(TargetDir)dummy;%(Outputs)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RtRelease|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;__LITTLE_ENDIAN__;__WINDOWS_ASIO__;__WINDOWS_DS__;__WINDOWS_MM__;USE_LIBPNG=1;TIXML_USE_TICPP;TIXML_USE_STL;_RT_AUDIO;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsManaged>false</CompileAsManaged>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <CallingConvention>Cdecl</CallingConvention>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies);winmm.lib;Wsock32.lib;dsound.lib;libpng.lib;zlib.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(TargetDir)$(TargetName).map</MapFileName>
+      <MapExports>true</MapExports>
+      <IgnoreSpecificDefaultLibraries>LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalLibraryDirectories>D:\Dev\C++\Lib\boost\boost_1_47_0\stage\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>StampVer -v$(ProjectDir)stampver.inf -o3 -i4 -j4 $(TargetPath)</Command>
+      <Outputs>$(TargetDir)dummy;%(Outputs)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;WIN32;__LITTLE_ENDIAN__;__WINDOWS_ASIO__;__WINDOWS_DS__;__WINDOWS_MM__;USE_LIBPNG=1;TIXML_USE_TICPP;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsManaged>false</CompileAsManaged>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <CallingConvention>Cdecl</CallingConvention>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies);winmm.lib;Wsock32.lib;dsound.lib;libpng.lib;zlib.lib</AdditionalDependencies>
+      <ModuleDefinitionFile>$(ProjectDir)vstplug.def</ModuleDefinitionFile>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(TargetDir)$(TargetName).map</MapFileName>
+      <MapExports>true</MapExports>
+      <IgnoreSpecificDefaultLibraries> LIBCMT</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "C:\AudioPrograms\Vstplugins\Synth\$(TargetName)$(TargetExt)"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Deploy</Message>
+    </PostBuildEvent>
+    <CustomBuildStep>
+      <Command>StampVer -v$(ProjectDir)stampver.inf -o3 -i4 -j4 $(TargetPath)</Command>
+      <Outputs>$(TargetDir)dummy;%(Outputs)</Outputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AppOptions.h" />
+    <ClInclude Include="src\GUI\BankView.h" />
+    <ClInclude Include="src\GUI\ChildFrame.h" />
+    <ClInclude Include="src\GUI\Clipboard.h" />
+    <ClInclude Include="src\GUI\Colors.h" />
+    <ClInclude Include="src\GUI\Editor.h" />
+    <ClInclude Include="src\GUI\Fonts.h" />
+    <ClInclude Include="src\GUI\GridBox.h" />
+    <ClInclude Include="src\GUI\Images.h" />
+    <ClInclude Include="src\GUI\MainFrame.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\GUI\ModuleBox.h" />
+    <ClInclude Include="src\GUI\ModulePort.h" />
+    <ClInclude Include="src\GUI\CtrlView.h" />
+    <ClInclude Include="src\GUI\SystemView.h" />
+    <ClInclude Include="src\GUI\PrefsDialog.h" />
+    <ClInclude Include="src\GUI\ProgramView.h" />
+    <ClInclude Include="src\GUI\SelectBox.h" />
+    <ClInclude Include="src\GUI\TabView.h" />
+    <ClInclude Include="src\GUI\TextEdit.h" />
+    <ClInclude Include="src\GUI\Widgets.h" />
+    <ClInclude Include="src\GUI\Wire.h" />
+    <ClInclude Include="src\ModuleData.h" />
+    <ClInclude Include="src\ModuleInfo.h" />
+    <ClInclude Include="src\Modules\Envelopes.h" />
+    <ClInclude Include="src\Modules\Delay.h" />
+    <ClInclude Include="src\Modules\Master.h" />
+    <ClInclude Include="src\Modules\SineOscil.h" />
+    <ClInclude Include="src\Modules\MidiModules.h" />
+    <ClInclude Include="src\SoundDevices.h" />
+    <ClInclude Include="src\VST\aeffguieditor.h" />
+    <ClInclude Include="src\VST\cdatabrowser.h" />
+    <ClInclude Include="src\VST\cfileselector.h" />
+    <ClInclude Include="src\VST\cocoasupport.h" />
+    <ClInclude Include="src\VST\cscrollview.h" />
+    <ClInclude Include="src\VST\ctabview.h" />
+    <ClInclude Include="src\VST\ctooltipsupport.h" />
+    <ClInclude Include="src\VST\cvstguitimer.h" />
+    <ClInclude Include="src\VST\plugguieditor.h" />
+    <ClInclude Include="src\VST\vstcontrols.h" />
+    <ClInclude Include="src\VST\vstgui.h" />
+    <ClInclude Include="src\VST\vstguidebug.h" />
+    <ClInclude Include="src\VST\vstkeycode.h" />
+    <ClInclude Include="src\Bank.h" />
+    <ClInclude Include="src\Module.h" />
+    <ClInclude Include="src\Buffer.h" />
+    <ClInclude Include="src\MidiEvent.h" />
+    <ClInclude Include="src\Ports.h" />
+    <ClInclude Include="src\Polyphony.h" />
+    <ClInclude Include="src\Profiler.h" />
+    <ClInclude Include="src\Synth.h" />
+    <ClInclude Include="src\Program.h" />
+    <ClInclude Include="src\Trace.h" />
+    <ClInclude Include="src\Utils.h" />
+    <ClInclude Include="src\RT\asio.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\asiodrivers.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\asiodrvr.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\asiolist.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\asiosys.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\dsound.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\ginclude.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\iasiodrv.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\iasiothiscallresolver.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\RtMidiInput.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\Mutex.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\RtAudio.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\RtError.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\RtMidi.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\RT\soundcard.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\Definitions.h" />
+    <ClInclude Include="Src\VstWrapper.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RtDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RtRelease|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\VST\aeffect.h" />
+    <ClInclude Include="src\VST\aeffectx.h" />
+    <ClInclude Include="src\VST\aeffeditor.h" />
+    <ClInclude Include="src\VST\audioeffect.h" />
+    <ClInclude Include="src\VST\audioeffectx.h" />
+    <ClInclude Include="src\VST\vstfxstore.h" />
+    <ClInclude Include="src\XML\ticpp.h" />
+    <ClInclude Include="src\XML\ticpprc.h" />
+    <ClInclude Include="src\XML\tinystr.h" />
+    <ClInclude Include="src\XML\tinyxml.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AppOptions.cpp" />
+    <ClCompile Include="src\GUI\BankView.cpp" />
+    <ClCompile Include="src\GUI\ChildFrame.cpp" />
+    <ClCompile Include="src\GUI\Clipboard.cpp" />
+    <ClCompile Include="src\GUI\Colors.cpp" />
+    <ClCompile Include="src\GUI\Editor.cpp" />
+    <ClCompile Include="src\GUI\Fonts.cpp" />
+    <ClCompile Include="src\GUI\GridBox.cpp" />
+    <ClCompile Include="src\GUI\Images.cpp" />
+    <ClCompile Include="src\GUI\MainFrame.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\GUI\ModuleBox.cpp" />
+    <ClCompile Include="src\GUI\ModulePort.cpp" />
+    <ClCompile Include="src\GUI\CtrlView.cpp" />
+    <ClCompile Include="src\GUI\SystemView.cpp" />
+    <ClCompile Include="src\GUI\PrefsDialog.cpp" />
+    <ClCompile Include="src\GUI\ProgramView.cpp" />
+    <ClCompile Include="src\GUI\SelectBox.cpp" />
+    <ClCompile Include="src\GUI\TabView.cpp" />
+    <ClCompile Include="src\GUI\TextEdit.cpp" />
+    <ClCompile Include="src\GUI\Widgets.cpp" />
+    <ClCompile Include="src\GUI\Wire.cpp" />
+    <ClCompile Include="src\ModuleData.cpp" />
+    <ClCompile Include="src\ModuleInfo.cpp" />
+    <ClCompile Include="src\Modules\Envelopes.cpp" />
+    <ClCompile Include="src\Modules\Delay.cpp" />
+    <ClCompile Include="src\Modules\Master.cpp" />
+    <ClCompile Include="src\Modules\SineOscil.cpp" />
+    <ClCompile Include="src\Modules\MidiModules.cpp" />
+    <ClCompile Include="src\SoundDevices.cpp" />
+    <ClCompile Include="src\VST\aeffguieditor.cpp" />
+    <ClCompile Include="src\VST\cdatabrowser.cpp" />
+    <ClCompile Include="src\VST\cfileselector.cpp" />
+    <ClCompile Include="src\VST\cscrollview.cpp" />
+    <ClCompile Include="src\VST\ctabview.cpp" />
+    <ClCompile Include="src\VST\ctooltipsupport.cpp" />
+    <ClCompile Include="src\VST\cvstguitimer.cpp" />
+    <ClCompile Include="src\VST\plugguieditor.cpp" />
+    <ClCompile Include="src\VST\vstcontrols.cpp" />
+    <ClCompile Include="src\VST\vstgui.cpp" />
+    <ClCompile Include="src\VST\vstguidebug.cpp" />
+    <ClCompile Include="src\VST\winfileselector.cpp" />
+    <ClCompile Include="src\Bank.cpp" />
+    <ClCompile Include="src\Module.cpp" />
+    <ClCompile Include="src\MidiEvent.cpp" />
+    <ClCompile Include="src\Ports.cpp" />
+    <ClCompile Include="src\Polyphony.cpp" />
+    <ClCompile Include="src\Synth.cpp" />
+    <ClCompile Include="src\Program.cpp" />
+    <ClCompile Include="src\Utils.cpp" />
+    <ClCompile Include="Src\StandaloneMain.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\RT\asio.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\RT\asiodrivers.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\RT\asiolist.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\RT\iasiothiscallresolver.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\RT\RtMidiInput.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\RT\Mutex.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\RT\RtAudio.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\RT\RtMidi.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Src\VstWrapper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RtDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RtRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\VST\audioeffect.cpp" />
+    <ClCompile Include="src\VST\audioeffectx.cpp" />
+    <ClCompile Include="src\VST\vstplugmain.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RtDebug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RtRelease|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\XML\ticpp.cpp" />
+    <ClCompile Include="src\XML\tinystr.cpp" />
+    <ClCompile Include="src\XML\tinyxml.cpp" />
+    <ClCompile Include="src\XML\tinyxmlerror.cpp" />
+    <ClCompile Include="src\XML\tinyxmlparser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

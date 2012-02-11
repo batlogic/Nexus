@@ -1,0 +1,177 @@
+<?xml version="1.0" standalone="no" ?>
+<Bank name="Test" program="0">
+    <Program name="Test" category="default" comment="" voices="32">
+        <Module id="0" label="Master" catalog="0" poly="0" x="462" y="186" collapsed="0">
+            <Param id="0" label="Volume" value="0.627907" dflt="0.35" />
+            <Link source="1" out="0" in="0" label="Delay[1]-&gt;In" value="1" style="0" />
+        </Module>
+        <Module id="3" label="Sine" catalog="10" poly="1" x="222" y="144" collapsed="0">
+            <Param id="2" label="Tune" value="0" style="2" dflt="0" min="-48" max="48" steps="96" />
+            <Param id="3" label="Finetune" value="0" style="2" dflt="0" min="-1" steps="200" />
+            <Link source="6" out="0" in="0" label="Input[6]-&gt;Freq" value="1" style="2" min="-1" />
+        </Module>
+        <Module id="4" label="ADSR" catalog="11" poly="1" x="339" y="186" collapsed="0">
+            <Param id="2" label="Attack" value="0.00944882" cc="1" unit="sec" fmt="6" max="1.2" log="12" steps="127" />
+            <Param id="3" label="Decay" value="1" unit="sec" fmt="6" steps="127" />
+            <Param id="4" label="Sustain" value="1" unit="db" fmt="3" steps="127" />
+            <Param id="5" label="Release" value="0.4" ccmin="127" ccmax="0" unit="sec" fmt="6" max="5" steps="50" />
+            <Link source="3" out="0" in="0" label="Sine-&gt;In" value="0.418605" cc="50" />
+            <Link source="6" out="1" in="1" label="Input[6]-&gt;Gate" value="1" />
+        </Module>
+        <Module id="6" label="Input" catalog="3" poly="1" x="97" y="188" collapsed="0">
+            <Param id="0" label="Bend Range" value="2" style="2" dflt="2" min="-48" max="48" steps="48" />
+            <Param id="1" label="Portamento Time" value="100.406" unit="msec" fmt="1" dflt="0" max="2000" log="24" steps="2000" />
+            <Param id="2" label="Portamento Auto" value="0" style="3" steps="1" />
+            <Param id="3" label="Unison Voices" value="5" style="4" min="1" max="8" steps="8" />
+        </Module>
+        <Module id="1" label="Delay" catalog="12" poly="0" x="417" y="256" collapsed="0">
+            <Param id="1" label="Time" value="0.5" dflt="0.5" />
+            <Param id="2" label="Repeats" value="0.5" dflt="0.5" />
+            <Param id="3" label="Gain" value="0.5" dflt="0.5" />
+            <Link source="4" out="0" in="0" label="ADSR[4]-&gt;In" value="1" style="0" />
+        </Module>
+    </Program>
+    <Program name="FMPad" category="default" comment="" voices="32">
+        <Module id="3" label="Sine" catalog="10" poly="1" x="188" y="125" collapsed="0">
+            <Param id="2" label="Tune" value="0" style="2" dflt="0" min="-48" max="48" steps="96" />
+            <Param id="3" label="Finetune" value="0" style="2" dflt="0" min="-1" steps="200" />
+            <Link source="6" out="0" in="0" label="ADSR[6]-&gt;Freq" value="566.891" max="1000" steps="0" />
+            <Link source="7" out="0" in="0" label="Input[7]-&gt;Freq" value="1" />
+        </Module>
+        <Module id="4" label="ADSR" catalog="11" poly="1" x="315" y="124" collapsed="0">
+            <Param id="2" label="Attack" value="0.103937" unit="sec" fmt="6" max="1.2" log="12" steps="127" />
+            <Param id="3" label="Decay" value="0.204724" unit="sec" fmt="6" steps="127" />
+            <Param id="4" label="Sustain" value="0.590551" unit="db" fmt="3" steps="127" />
+            <Param id="5" label="Release" value="1.9" unit="sec" fmt="6" max="5" steps="50" />
+            <Link source="3" out="0" in="0" label="Sine-&gt;In" value="1" />
+            <Link source="7" out="1" in="1" label="Input[7]-&gt;Gate" value="1" />
+        </Module>
+        <Module id="5" label="Sine" catalog="10" poly="1" x="50" y="231" collapsed="0">
+            <Param id="2" label="Tune" value="0" style="2" dflt="0" min="-48" max="48" steps="96" />
+            <Param id="3" label="Finetune" value="-0.05" style="2" dflt="0" min="-1" steps="200" />
+            <Link source="7" out="0" in="0" label="Input[7]-&gt;Freq" value="1" />
+        </Module>
+        <Module id="6" label="ADSR" catalog="11" poly="1" x="180" y="231" collapsed="0">
+            <Param id="2" label="Attack" value="0.9" unit="sec" dflt="0.25" max="10" log="6" steps="100" />
+            <Param id="3" label="Decay" value="6.3" unit="sec" dflt="0" max="10" log="6" steps="100" />
+            <Param id="4" label="Sustain" value="0.75" dflt="0.75" log="6" steps="100" />
+            <Param id="5" label="Release" value="6.4" unit="sec" dflt="0.3" max="10" log="6" steps="100" />
+            <Link source="5" out="0" in="0" label="Sine[5]-&gt;In" value="1" />
+            <Link source="7" out="1" in="1" label="Input[7]-&gt;Gate" value="1" />
+        </Module>
+        <Module id="7" label="Input" catalog="3" poly="1" x="53" y="125" collapsed="0">
+            <Param id="0" label="Bend Range" value="2" style="2" dflt="2" min="-48" max="48" steps="96" />
+            <Param id="1" label="Portamento Time" value="0" unit="msec" fmt="1" dflt="0" max="2000" steps="100" />
+            <Param id="2" label="Portamento Auto" value="1" style="3" steps="1" />
+            <Param id="3" label="Unison Voices" value="4" style="4" min="1" max="8" steps="8" />
+        </Module>
+        <Module id="0" label="Master" catalog="0" poly="0" x="443" y="124" collapsed="0">
+            <Param id="0" label="Volume" value="0.753101" dflt="0.35" />
+            <Link source="4" out="0" in="0" label="ADSR[4]-&gt;In" value="1" style="0" />
+        </Module>
+    </Program>
+    <Program name="FMTest" category="default" comment="" voices="8">
+        <Module id="0" label="Master" catalog="0" poly="0" x="446" y="149" collapsed="0">
+            <Param id="0" label="Volume" value="0.412016" dflt="0.35" />
+            <Link source="8" out="0" in="0" label="Delay[8]-&gt;In" value="0.35" style="0" />
+        </Module>
+        <Module id="3" label="Sine" catalog="10" poly="1" x="185" y="115" collapsed="0">
+            <Param id="2" label="Tune" value="0" style="2" dflt="0" min="-48" max="48" steps="96" />
+            <Param id="3" label="Finetune" value="0" style="2" dflt="0" min="-1" steps="200" />
+            <Link source="6" out="0" in="0" label="ADSR[6]-&gt;Freq" value="883.721" max="5000" steps="0" />
+            <Link source="5" out="0" in="1" label="AMOp[5]-&gt;Amp" value="0.821706" />
+            <Link source="9" out="0" in="0" label="Input[9]-&gt;Freq" value="1" />
+        </Module>
+        <Module id="4" label="ADSR" catalog="11" poly="1" x="319" y="149" collapsed="0">
+            <Param id="2" label="Attack" value="0" unit="sec" fmt="6" max="1.2" log="12" steps="127" />
+            <Param id="3" label="Decay" value="0.204724" unit="sec" fmt="6" steps="127" />
+            <Param id="4" label="Sustain" value="0.307087" unit="db" fmt="3" steps="127" />
+            <Param id="5" label="Release" value="3.1" unit="sec" fmt="6" max="5" steps="50" />
+            <Link source="3" out="0" in="0" label="Sine-&gt;In" value="1" />
+            <Link source="9" out="1" in="1" label="Input[9]-&gt;Gate" value="1" />
+        </Module>
+        <Module id="5" label="AMOp" catalog="10" poly="1" x="51" y="183" collapsed="0">
+            <Param id="2" label="Tune" value="-89.75" style="2" dflt="0" min="-180" max="48" steps="228" />
+            <Param id="3" label="Finetune" value="0" style="2" dflt="0" min="-1" steps="200" />
+        </Module>
+        <Module id="6" label="ADSR" catalog="11" poly="1" x="185" y="54" collapsed="0">
+            <Param id="2" label="Attack" value="0" unit="sec" dflt="0.25" max="10" log="6" steps="100" />
+            <Param id="3" label="Decay" value="2.8" unit="sec" dflt="0" max="10" log="6" steps="100" />
+            <Param id="4" label="Sustain" value="0.17" dflt="0.75" log="6" steps="100" />
+            <Param id="5" label="Release" value="4" unit="sec" dflt="0.3" max="10" log="6" steps="100" />
+            <Link source="7" out="0" in="0" label="FMOP[7]-&gt;In" value="1" />
+            <Link source="9" out="1" in="1" label="Input[9]-&gt;Gate" value="1" />
+        </Module>
+        <Module id="7" label="FMOP" catalog="10" poly="1" x="50" y="54" collapsed="0">
+            <Param id="2" label="Tune" value="17" style="2" dflt="0" min="-48" max="48" steps="96" />
+            <Param id="3" label="Finetune" value="-0.12" style="2" dflt="0" min="-1" steps="200" />
+            <Link source="9" out="0" in="0" label="Input[9]-&gt;Freq" value="1" />
+        </Module>
+        <Module id="8" label="Delay" catalog="12" poly="0" x="320" y="80" collapsed="0">
+            <Param id="1" label="Time" value="0.139535" />
+            <Param id="2" label="Repeats" value="0.465116" />
+            <Param id="3" label="Gain" value="0.666667" />
+            <Link source="4" out="0" in="0" label="ADSR[4]-&gt;In" value="1" />
+        </Module>
+        <Module id="9" label="Input" catalog="3" poly="1" x="47" y="113" collapsed="0">
+            <Param id="0" label="Bend Range" value="48" style="2" dflt="2" min="-48" max="48" steps="96" />
+            <Param id="1" label="Portamento Time" value="280" unit="msec" fmt="1" dflt="0" max="2000" steps="100" />
+            <Param id="2" label="Portamento Auto" value="1" style="3" steps="1" />
+            <Param id="3" label="Unison Voices" value="1" style="4" min="1" max="8" steps="8" />
+        </Module>
+    </Program>
+    <Program name="2. Versuchsprogramm" category="" comment="Super Doll" voices="6">
+        <Module id="0" label="Master" catalog="0" poly="0" x="456" y="98" collapsed="0">
+            <Param id="0" label="Volume" value="0.5" dflt="0.35" steps="100" />
+            <Link source="6" out="0" in="0" label="ADSR-&gt;In" value="0.35" style="0" />
+        </Module>
+        <Module id="3" label="MidiFreq" catalog="2" poly="1" x="34" y="137" collapsed="0" />
+        <Module id="4" label="MidiGate" catalog="1" poly="1" x="302" y="99" collapsed="0" />
+        <Module id="6" label="ADSR" catalog="11" poly="1" x="325" y="169" collapsed="0">
+            <Param id="2" label="Attack" value="0.0188976" unit="sec" fmt="6" max="1.2" log="12" steps="127" />
+            <Param id="3" label="Decay" value="0.204724" unit="sec" fmt="6" steps="127" />
+            <Param id="4" label="Sustain" value="0.590551" unit="db" fmt="3" steps="127" />
+            <Param id="5" label="Release" value="2.8" unit="sec" fmt="6" max="5" steps="50" />
+            <Link source="4" out="0" in="1" label="Gate" value="1" fmt="0" steps="127" />
+            <Link source="7" out="0" in="0" label="Sine-&gt;In" value="1" />
+        </Module>
+        <Module id="7" label="Sine" catalog="10" poly="1" x="169" y="165" collapsed="0">
+            <Param id="2" label="Tune" value="12" style="2" dflt="0" min="-48" max="48" steps="96" />
+            <Param id="3" label="Finetune" value="0" style="2" dflt="0" min="-1" steps="200" />
+            <Link source="3" out="0" in="0" label="MidiFreq-&gt;Freq" value="1" />
+        </Module>
+    </Program>
+    <Program name="Quinten" category="" comment="was mit quinten" voices="8">
+        <Module id="0" label="Master" catalog="0" poly="0" x="435" y="137" collapsed="0">
+            <Param id="0" label="Volume" value="0.35" dflt="0.35" />
+            <Link source="9" out="0" in="0" label="Delay-&gt;In" value="0.35" style="0" />
+        </Module>
+        <Module id="3" label="MidiFreq" catalog="2" poly="1" x="34" y="137" collapsed="0" />
+        <Module id="4" label="MidiGate" catalog="1" poly="1" x="302" y="99" collapsed="0" />
+        <Module id="6" label="ADSR" catalog="11" poly="1" x="321" y="206" collapsed="0">
+            <Param id="2" label="Attack" value="0.453543" unit="sec" fmt="6" max="1.2" log="12" steps="127" />
+            <Param id="3" label="Decay" value="0.84252" unit="sec" fmt="6" steps="127" />
+            <Param id="4" label="Sustain" value="0.755906" unit="db" fmt="3" steps="127" />
+            <Param id="5" label="Release" value="2.8" unit="sec" fmt="6" max="5" steps="50" />
+            <Link source="4" out="0" in="1" label="Gate" value="1" fmt="0" steps="127" />
+            <Link source="7" out="0" in="0" label="Sine-&gt;In" value="1" />
+            <Link source="8" out="0" in="0" label="Sine-&gt;In" value="0.401639" />
+        </Module>
+        <Module id="7" label="Sine" catalog="10" poly="1" x="175" y="131" collapsed="0">
+            <Param id="2" label="Tune" value="0" style="2" dflt="0" min="-48" max="48" steps="96" />
+            <Param id="3" label="Finetune" value="0" style="2" dflt="0" min="-1" steps="200" />
+            <Link source="3" out="0" in="0" label="MidiFreq-&gt;Freq" value="1" />
+        </Module>
+        <Module id="8" label="Sine" catalog="10" poly="1" x="176" y="193" collapsed="0">
+            <Param id="2" label="Tune" value="7" style="2" dflt="0" min="-48" max="48" steps="96" />
+            <Param id="3" label="Finetune" value="0" style="2" dflt="0" min="-1" steps="200" />
+            <Link source="3" out="0" in="0" label="MidiFreq-&gt;Freq" value="1" />
+        </Module>
+        <Module id="9" label="Delay" catalog="12" poly="1" x="435" y="52" collapsed="0">
+            <Param id="1" label="Time" value="0.639344" />
+            <Param id="2" label="Repeats" value="0.811475" />
+            <Param id="3" label="Gain" value="1" />
+            <Link source="6" out="0" in="0" label="ADSR-&gt;In" value="1" />
+        </Module>
+    </Program>
+</Bank>

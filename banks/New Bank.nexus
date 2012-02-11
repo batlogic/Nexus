@@ -1,0 +1,140 @@
+<?xml version="1.0" standalone="no" ?>
+<Bank name="New Bank" program="1">
+    <Program name="Test" category="default" comment="" voices="32">
+        <Module id="0" label="Master" catalog="0" poly="0" x="462" y="186">
+            <Param id="0" value="0.35" />
+            <Link source="4" out="0" in="0" value="1" label="ADSR[4]-&gt;In" style="0" />
+        </Module>
+        <Module id="3" label="Sine" catalog="10" poly="1" x="222" y="144">
+            <Param id="2" value="0" />
+            <Param id="3" value="0" />
+            <Link source="6" out="0" in="0" value="1" label="Input[6]-&gt;Freq" />
+        </Module>
+        <Module id="4" label="ADSR" catalog="11" poly="1" x="339" y="186">
+            <Param id="2" value="0" cc="1" fmt="6" log="12" steps="127" />
+            <Param id="3" value="0.204724" fmt="6" steps="127" />
+            <Param id="4" value="0.590551" fmt="3" steps="127" />
+            <Param id="5" value="1.1" ccmin="127" ccmax="0" fmt="6" steps="50" />
+            <Link source="3" out="0" in="0" value="1" label="Sine-&gt;In" cc="50" />
+            <Link source="6" out="1" in="1" value="1" label="Input[6]-&gt;Gate" />
+        </Module>
+        <Module id="6" label="Input" catalog="3" poly="1" x="98" y="187">
+            <Param id="0" value="2" label="Bend range" steps="48" />
+            <Param id="1" value="0" />
+            <Param id="2" value="0" />
+        </Module>
+    </Program>
+    <Program name="FMPad" category="default" comment="" voices="32">
+        <Module id="0" label="Master" catalog="0" poly="0" x="499" y="133">
+            <Param id="0" value="0.35" />
+            <Link source="4" out="0" in="0" value="1" label="Volume" style="0" unit="db" fmt="3" steps="127" />
+        </Module>
+        <Module id="1" label="MidiFreq" catalog="2" poly="1" x="49" y="126">
+            <Param id="0" value="2" />
+            <Param id="1" value="0" />
+            <Param id="2" value="0" />
+        </Module>
+        <Module id="2" label="MidiGate" catalog="1" poly="1" x="185" y="171" />
+        <Module id="3" label="Sine" catalog="10" poly="1" x="185" y="126">
+            <Param id="2" value="0" />
+            <Param id="3" value="0" />
+            <Link source="1" out="0" in="0" value="1" label="MidiFreq-&gt;Freq" />
+            <Link source="6" out="0" in="0" value="256.814" label="ADSR[6]-&gt;Freq" max="1000" steps="0" />
+        </Module>
+        <Module id="4" label="ADSR" catalog="11" poly="1" x="312" y="99">
+            <Param id="2" value="0.812598" fmt="6" log="12" steps="127" />
+            <Param id="3" value="0.204724" fmt="6" steps="127" />
+            <Param id="4" value="0.590551" fmt="3" steps="127" />
+            <Param id="5" value="3.4" fmt="6" steps="50" />
+            <Link source="2" out="0" in="1" value="1" label="Gate" fmt="0" steps="127" />
+            <Link source="3" out="0" in="0" value="1" label="Sine-&gt;In" />
+        </Module>
+        <Module id="5" label="Sine" catalog="10" poly="1" x="55" y="215">
+            <Param id="2" value="0" />
+            <Param id="3" value="-0.05" />
+            <Link source="1" out="0" in="0" value="1" label="MidiFreq[1]-&gt;Freq" />
+        </Module>
+        <Module id="6" label="ADSR" catalog="11" poly="1" x="180" y="231">
+            <Param id="2" value="0.9" dflt="0.25" max="10" steps="100" />
+            <Param id="3" value="6.3" max="10" />
+            <Param id="4" value="0.75" />
+            <Param id="5" value="6.4" dflt="0.3" max="10" />
+            <Link source="2" out="0" in="1" value="1" label="MidiGate[2]-&gt;Gate" />
+            <Link source="5" out="0" in="0" value="1" label="Sine[5]-&gt;In" />
+        </Module>
+    </Program>
+    <Program name="FMTest" category="default" comment="" voices="8">
+        <Module id="0" label="Master" catalog="0" poly="0" x="446" y="149">
+            <Param id="0" value="0.412016" />
+            <Link source="8" out="0" in="0" value="0.35" label="Delay[8]-&gt;In" style="0" />
+        </Module>
+        <Module id="1" label="MidiFreq" catalog="2" poly="1" x="49" y="115">
+            <Param id="0" value="2" />
+            <Param id="1" value="0" />
+            <Param id="2" value="0" />
+        </Module>
+        <Module id="2" label="MidiGate" catalog="1" poly="1" x="185" y="160" />
+        <Module id="3" label="Sine" catalog="10" poly="1" x="185" y="115">
+            <Param id="2" value="0" />
+            <Param id="3" value="0" />
+            <Link source="1" out="0" in="0" value="1" label="MidiFreq-&gt;Freq" />
+            <Link source="6" out="0" in="0" value="883.721" label="ADSR[6]-&gt;Freq" max="5000" steps="0" />
+            <Link source="5" out="0" in="1" value="0.821706" label="AMOp[5]-&gt;Amp" />
+        </Module>
+        <Module id="4" label="ADSR" catalog="11" poly="1" x="319" y="149">
+            <Param id="2" value="0" fmt="6" log="12" steps="127" />
+            <Param id="3" value="0.204724" fmt="6" steps="127" />
+            <Param id="4" value="0.307087" fmt="3" steps="127" />
+            <Param id="5" value="3.1" fmt="6" steps="50" />
+            <Link source="2" out="0" in="1" value="1" label="Gate" fmt="0" steps="127" />
+            <Link source="3" out="0" in="0" value="1" label="Sine-&gt;In" />
+        </Module>
+        <Module id="5" label="AMOp" catalog="10" poly="1" x="51" y="183">
+            <Param id="2" value="-89.75" min="-180" steps="228" />
+            <Param id="3" value="0" />
+        </Module>
+        <Module id="6" label="ADSR" catalog="11" poly="1" x="185" y="54">
+            <Param id="2" value="0" dflt="0.25" max="10" steps="100" />
+            <Param id="3" value="2.8" max="10" />
+            <Param id="4" value="0.17" />
+            <Param id="5" value="4" dflt="0.3" max="10" />
+            <Link source="2" out="0" in="1" value="1" label="MidiGate[2]-&gt;Gate" />
+            <Link source="7" out="0" in="0" value="1" label="FMOP[7]-&gt;In" />
+        </Module>
+        <Module id="7" label="FMOP" catalog="10" poly="1" x="50" y="54">
+            <Param id="2" value="17" />
+            <Param id="3" value="-0.12" />
+            <Link source="1" out="0" in="0" value="1" label="MidiFreq[1]-&gt;Freq" />
+        </Module>
+        <Module id="8" label="Delay" catalog="12" poly="0" x="320" y="80">
+            <Param id="1" value="0.139535" />
+            <Param id="2" value="0.465116" />
+            <Param id="3" value="0.666667" />
+            <Link source="4" out="0" in="0" value="1" label="ADSR[4]-&gt;In" />
+        </Module>
+    </Program>
+    <Program name="3 [Default]" category="default" comment="" voices="32">
+        <Module id="0" label="Master" catalog="0" poly="0" x="440" y="149">
+            <Param id="0" value="0.35" />
+            <Link source="3" out="0" in="0" value="1" label="Volume" style="0" unit="db" fmt="3" steps="127" />
+        </Module>
+        <Module id="1" label="Input" catalog="3" poly="1" x="49" y="115">
+            <Param id="0" value="-2" label="Bend range" />
+            <Param id="1" value="0" />
+            <Param id="2" value="0" />
+        </Module>
+        <Module id="2" label="Sine" catalog="10" poly="1" x="185" y="115">
+            <Param id="2" value="0" />
+            <Param id="3" value="0" />
+            <Link source="1" out="0" in="0" value="1" label="MidiFreq-&gt;Freq" />
+        </Module>
+        <Module id="3" label="ADSR" catalog="11" poly="1" x="319" y="148">
+            <Param id="2" value="0.0188976" fmt="6" log="12" steps="127" />
+            <Param id="3" value="0.204724" fmt="6" steps="127" />
+            <Param id="4" value="0.590551" fmt="3" steps="127" />
+            <Param id="5" value="2.8" fmt="6" steps="50" />
+            <Link source="1" out="1" in="1" value="1" label="Gate" fmt="0" steps="127" />
+            <Link source="2" out="0" in="0" value="1" label="Sine-&gt;In" />
+        </Module>
+    </Program>
+</Bank>

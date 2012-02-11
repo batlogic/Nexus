@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Nexus", "Nexus.vcxproj", "{D6F8650A-5425-4229-8B1C-D52278AE978E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		RtDebug|Win32 = RtDebug|Win32
+		RtRelease|Win32 = RtRelease|Win32
+		VstDebug|Win32 = VstDebug|Win32
+		VstRelease|Win32 = VstRelease|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F8650A-5425-4229-8B1C-D52278AE978E}.RtDebug|Win32.ActiveCfg = RtDebug|Win32
+		{D6F8650A-5425-4229-8B1C-D52278AE978E}.RtDebug|Win32.Build.0 = RtDebug|Win32
+		{D6F8650A-5425-4229-8B1C-D52278AE978E}.RtRelease|Win32.ActiveCfg = RtRelease|Win32
+		{D6F8650A-5425-4229-8B1C-D52278AE978E}.RtRelease|Win32.Build.0 = RtRelease|Win32
+		{D6F8650A-5425-4229-8B1C-D52278AE978E}.VstDebug|Win32.ActiveCfg = VstDebug|Win32
+		{D6F8650A-5425-4229-8B1C-D52278AE978E}.VstDebug|Win32.Build.0 = VstDebug|Win32
+		{D6F8650A-5425-4229-8B1C-D52278AE978E}.VstRelease|Win32.ActiveCfg = VstRelease|Win32
+		{D6F8650A-5425-4229-8B1C-D52278AE978E}.VstRelease|Win32.Build.0 = VstRelease|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

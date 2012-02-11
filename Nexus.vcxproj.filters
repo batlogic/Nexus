@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ModuleData.cpp" />
+    <ClCompile Include="src\ModuleInfo.cpp" />
+    <ClCompile Include="src\Module.cpp" />
+    <ClCompile Include="src\MidiEvent.cpp" />
+    <ClCompile Include="src\Ports.cpp" />
+    <ClCompile Include="src\Polyphony.cpp" />
+    <ClCompile Include="src\Synth.cpp" />
+    <ClCompile Include="src\Program.cpp" />
+    <ClCompile Include="src\Utils.cpp" />
+    <ClCompile Include="Src\VstWrapper.cpp" />
+    <ClCompile Include="src\VST\aeffguieditor.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RT\asio.cpp">
+      <Filter>RT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RT\asiodrivers.cpp">
+      <Filter>RT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RT\asiolist.cpp">
+      <Filter>RT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\audioeffect.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\audioeffectx.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\cdatabrowser.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\cfileselector.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\cscrollview.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\ctabview.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\ctooltipsupport.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\cvstguitimer.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Modules\Delay.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Editor.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RT\iasiothiscallresolver.cpp">
+      <Filter>RT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\MainFrame.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\ModuleBox.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\ModulePort.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RT\Mutex.cpp">
+      <Filter>RT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XML\ticpp.cpp">
+      <Filter>ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XML\tinystr.cpp">
+      <Filter>ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XML\tinyxml.cpp">
+      <Filter>ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XML\tinyxmlerror.cpp">
+      <Filter>ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XML\tinyxmlparser.cpp">
+      <Filter>ticpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\vstcontrols.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\vstgui.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\vstguidebug.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\winfileselector.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Widgets.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Wire.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VST\plugguieditor.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RT\RtAudio.cpp">
+      <Filter>RT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RT\RtMidi.cpp">
+      <Filter>RT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\TextEdit.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\CtrlView.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Modules\Envelopes.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Bank.cpp" />
+    <ClCompile Include="src\SoundDevices.cpp" />
+    <ClCompile Include="Src\StandaloneMain.cpp" />
+    <ClCompile Include="src\VST\vstplugmain.cpp">
+      <Filter>VST</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\GridBox.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\BankView.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AppOptions.cpp" />
+    <ClCompile Include="src\GUI\ProgramView.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\TabView.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\SelectBox.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\ChildFrame.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Clipboard.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Fonts.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Images.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\PrefsDialog.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\Colors.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Modules\SineOscil.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUI\SystemView.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RT\RtMidiInput.cpp">
+      <Filter>RT</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Modules\MidiModules.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Modules\Master.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ModuleData.h" />
+    <ClInclude Include="src\ModuleInfo.h" />
+    <ClInclude Include="src\Module.h" />
+    <ClInclude Include="src\Buffer.h" />
+    <ClInclude Include="src\MidiEvent.h" />
+    <ClInclude Include="src\Ports.h" />
+    <ClInclude Include="src\Polyphony.h" />
+    <ClInclude Include="src\Profiler.h" />
+    <ClInclude Include="src\Synth.h" />
+    <ClInclude Include="src\Program.h" />
+    <ClInclude Include="src\Trace.h" />
+    <ClInclude Include="src\Utils.h" />
+    <ClInclude Include="src\Definitions.h" />
+    <ClInclude Include="Src\VstWrapper.h" />
+    <ClInclude Include="src\VST\aeffect.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\aeffectx.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\aeffeditor.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\aeffguieditor.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\asio.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\asiodrivers.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\asiodrvr.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\asiolist.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\asiosys.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\audioeffect.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\audioeffectx.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\cdatabrowser.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\cfileselector.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\cocoasupport.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\cscrollview.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\ctabview.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\ctooltipsupport.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\cvstguitimer.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Modules\Delay.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\dsound.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\Editor.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\ginclude.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\iasiodrv.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\iasiothiscallresolver.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\MainFrame.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\ModuleBox.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\ModulePort.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\Mutex.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XML\ticpp.h">
+      <Filter>ticpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XML\ticpprc.h">
+      <Filter>ticpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XML\tinystr.h">
+      <Filter>ticpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XML\tinyxml.h">
+      <Filter>ticpp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\vstcontrols.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\vstfxstore.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\vstgui.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\vstguidebug.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\vstkeycode.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\soundcard.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\Wire.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\Widgets.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VST\plugguieditor.h">
+      <Filter>VST</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\RtAudio.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\RtError.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\RtMidi.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\TextEdit.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\CtrlView.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Modules\Envelopes.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Bank.h" />
+    <ClInclude Include="src\SoundDevices.h" />
+    <ClInclude Include="src\GUI\GridBox.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\BankView.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AppOptions.h" />
+    <ClInclude Include="src\GUI\ProgramView.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\TabView.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\SelectBox.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\ChildFrame.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\Clipboard.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\PrefsDialog.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\Fonts.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\Images.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\Colors.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Modules\SineOscil.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI\SystemView.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RT\RtMidiInput.h">
+      <Filter>RT</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Modules\MidiModules.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Modules\Master.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="VST">
+      <UniqueIdentifier>{3bfc8614-362c-4475-866b-5b979db23e2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RT">
+      <UniqueIdentifier>{f641d8d1-8610-48ed-99d1-646d3e1f3323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{021a371d-acba-4a1c-bad6-256f1d3d8485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{6fbd6a15-0054-43e9-bcf0-5610c803b31c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ticpp">
+      <UniqueIdentifier>{17756d0d-591f-4330-925f-f4f0fe888b06}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

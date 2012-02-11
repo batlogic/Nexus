@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="no" ?>
+<Bank>
+<Program name="test1" voices="8" id="0">
+	<Module catalog="0" id="0" type="Master">	
+		<Param id="0" value="0.3" />
+	</Module>
+	<Module catalog="1" id="1" type="VoiceCombiner">
+		<Link target="13" out="0" in="0" />
+	</Module>
+	<Module catalog="2" id="2" type="MidiGate">
+		<Link target="12" out="0" in="0" />
+	</Module>
+	<Module catalog="3" id="3" type="MidiPitch">
+		<Link target="11" out="0" in="0" />
+	</Module>
+	<Module catalog="11" id="11" type="Sine" >
+		<Link target="12" out="0" in="0" />
+	</Module>
+	<Module catalog="12" id="12" type="ADSREnv">	
+		<Param id="0" value="0.1" />
+		<Param id="1" value="0.0" />
+		<Param id="2" value="1.0" />
+		<Param id="3" value="0.1" />
+		<Link target="1" out="0" in="0" />
+	</Module>
+	<Module catalog="13" id="13" type="Delay">
+		<Param id="0" value="0.5" />
+		<Param id="1" value="0.5" />
+		<Param id="2" value="0.75" />
+		<Link target="0" out="0" in="0" />
+	</Module>
+</Program>
+<Program name="test2" voices="8" id="0">
+	<Module catalog="0" id="0" type="Master">	
+		<Param id="0" value="0.3" />
+	</Module>
+	<Module catalog="1" id="1" type="VoiceCombiner">
+		<Link target="13" out="0" in="0" />
+	</Module>
+	<Module catalog="2" id="2" type="MidiGate">
+		<Link target="12" out="0" in="0" />
+	</Module>
+	<Module catalog="3" id="3" type="MidiPitch">
+		<Link target="11" out="0" in="0" />
+	</Module>
+	<Module catalog="11" id="11" type="Sine">
+		<Link target="12" out="0" in="0" />
+	</Module>
+	<Module catalog="12" id="12" type="ADSREnv">
+		<Param id="0" value="0.5" />
+		<Param id="1" value="0.2" />
+		<Param id="2" value="0.3" />
+		<Param id="3" value="0.7" />
+		<Link target="1" out="0" in="0" />
+	</Module>
+	<Module catalog="13" id="13" type="Delay">
+		<Param id="0" value="0.3" />
+		<Param id="1" value="0.8" />
+		<Param id="2" value="1" />
+		<Link target="0" out="0" in="0" />
+	</Module>
+</Program>
+</Bank>

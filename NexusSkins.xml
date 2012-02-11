@@ -1,0 +1,126 @@
+<?xml version="1.0" standalone="no" ?>
+<NexusColors>
+	<Scheme name="Grey" wires="1">
+	    <Color code="BEBDBB" name="fill1" />
+	    <Color code="5F5F60" name="fill2" />
+	    <Color code="A4A4A4" name="fill3" />
+	    <Color code="000000" name="text1" />
+	    <Color code="000000" name="text2" />
+	    <Color code="A4A4A4" name="text3" />
+	    <Color code="A01B14" name="selection" />
+	    <Color code="213B4B" name="control1" />
+		<Color code="BEBDBB" name="control2" />
+	    <Color code="828284" name="module" alpha="75" />
+	    <Color code="828284" name="moduleMono" alpha="22" />
+	    <Color code="5F5F60" name="modulePort1" />
+	    <Color code="A01B14" name="modulePort2" />
+	    <Color code="000000" name="moduleText1" />
+	    <Color code="A01B14" name="moduleText2" />
+		<Color code="828284" name="moduleFrame1" alpha="75"/>
+		<Color code="DADADA" name="moduleFrame2" />
+		<Color code="BE231B" name="moduleFrame3" />
+	    <Color code="5F5F60" name="wire1" />
+	    <Color code="BE231B" name="wire2" />
+	    <Color code="213B4B" name="master" />
+		<Color code="BEBDBB" name="masterPort1" />
+		<Color code="A01B14" name="masterPort2" />
+		<Color code="BEBDBB" name="masterText1" />
+		<Color code="A01B14" name="masterText2" />
+		<Color code="213B4B" name="masterFrame1" />
+		<Color code="DADADA" name="masterFrame2" />
+		<Color code="A01B14" name="masterFrame3" />
+	    <Color code="5F5F60" name="dlgFill1" />
+	    <Color code="89898A" name="dlgFill2" />
+	    <Color code="5F5F60" name="dlgCaption" alpha="175" />
+	    <Color code="C8C8C8" name="dlgText" />
+	    <Color code="89898A" name="dlgTextBkgnd" />
+	    <Color code="5F5F60" name="appFrame" />
+	    <Color code="5F5F60" name="appCaptionBar" />
+	    <Color code="A4A4A4" name="appCaption" />
+	    <Color code="A4A4A4" name="appMin" />
+	    <Color code="A4A4A4" name="appMax" />
+	    <Color code="A01B14" name="appClose" />
+	</Scheme>
+	<Scheme name="White" wires="1">
+	    <Color code="BEBDBB" name="fill1" />
+	    <Color code="DEDEDE" name="fill2" />
+	    <Color code="888888" name="fill3" />
+	    <Color code="000000" name="text1" />
+	    <Color code="000000" name="text2" />
+	    <Color code="888888" name="text3" />
+	    <Color code="A21D08" name="selection" />
+	    <Color code="757575" name="control1" />
+		<Color code="BEBDBB" name="control2" />
+	    <Color code="4D5F53" name="module" alpha="75"/>
+	    <Color code="4D5F53" name="moduleMono" alpha="25" />
+	    <Color code="999999" name="modulePort1" />
+	    <Color code="555555" name="modulePort2" />
+	    <Color code="555555" name="moduleText1" />
+	    <Color code="A21D08" name="moduleText2" />
+		<Color code="757575" name="moduleFrame1" alpha="0"/>
+		<Color code="DEDEDE" name="moduleFrame2" />
+		<Color code="A21D08" name="moduleFrame3" />
+	    <Color code="777777" name="wire1" />
+	    <Color code="BE231B" name="wire2" />
+	    <Color code="A21D08" name="master" />
+		<Color code="BEBDBB" name="masterPort1" />
+		<Color code="CB4F3B" name="masterPort2" />
+		<Color code="BEBDBB" name="masterText1" />
+		<Color code="DEDEDE" name="masterText2" />
+		<Color code="A21D08" name="masterFrame1" />
+		<Color code="DADADA" name="masterFrame2" />
+		<Color code="EEEEEE" name="masterFrame3" />
+	    <Color code="DEDEDE" name="dlgFill1" />
+	    <Color code="BEBDBB" name="dlgFill2" />
+	    <Color code="BEBDBB" name="dlgCaption" alpha="125" />
+	    <Color code="555555" name="dlgText" />
+	    <Color code="BEBDBB" name="dlgTextBkgnd" />
+	    <Color code="DEDEDE" name="appFrame" />
+	    <Color code="DEDEDE" name="appCaptionBar" />
+	    <Color code="A4A4A4" name="appCaption" />
+	    <Color code="A4A4A4" name="appMin" />
+	    <Color code="A4A4A4" name="appMax" />
+	    <Color code="757575" name="appClose" />
+	</Scheme>
+	<Scheme name="Brown" wires="2">
+	    <Color code="9E886E" name="fill1" />
+	    <Color code="71593C" name="fill2" />
+	    <Color code="A98D6C" name="fill3" />
+	    <Color code="000000" name="text1" />
+	    <Color code="674925" name="text2" />
+	    <Color code="A98D6C" name="text3" />
+	    <Color code="E6B025" name="selection" />
+	    <Color code="18303E" name="control1" />
+		<Color code="9E886E" name="control2" />
+	    <Color code="71593C" name="module" alpha="99" />
+	    <Color code="71593C" name="moduleMono" alpha="55" />
+	    <Color code="402F00" name="modulePort1" alpha="175"/>
+	    <Color code="1C3746" name="modulePort2" />
+	    <Color code="402F00" name="moduleText1" />
+	    <Color code="DABF5F" name="moduleText2" />
+		<Color code="71593C" name="moduleFrame1" />
+		<Color code="402F00" name="moduleFrame2" />
+		<Color code="E6B025" name="moduleFrame3" />
+	    <Color code="71593C" name="wire1" />
+	    <Color code="E6B025" name="wire2" />
+	    <Color code="18303E" name="master" />
+		<Color code="9E886E" name="masterPort1" />
+		<Color code="55636B" name="masterPort2" />
+		<Color code="9E886E" name="masterText1" />
+		<Color code="E6B025" name="masterText2" />
+		<Color code="1C3746" name="masterFrame1" />
+		<Color code="1C3746" name="masterFrame2" />
+		<Color code="E6B025" name="masterFrame3" />
+	    <Color code="929292" name="dlgFill1" />
+	    <Color code="A4A4A4" name="dlgFill2" />
+	    <Color code="878787" name="dlgCaption" alpha="100" />
+	    <Color code="000000" name="dlgText" />
+	    <Color code="C4C4C4" name="dlgTextBkgnd" />
+	    <Color code="71593C" name="appFrame" />
+	    <Color code="71593C" name="appCaptionBar" />
+	    <Color code="A98D6C" name="appCaption" />
+	    <Color code="A98D6C" name="appMin" />
+	    <Color code="A98D6C" name="appMax" />
+	    <Color code="18303E" name="appClose" />
+	</Scheme>
+</NexusColors>

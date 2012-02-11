@@ -1,0 +1,53 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: RoundSysMenuButtons - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\sai\LOCALS~1\Temp\RSP15A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/RoundSysMenuButtons.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\VC++ 19 Days\RoundSysMenuButtons\RoundSysMenuButtons.cpp"
+"C:\VC++ 19 Days\RoundSysMenuButtons\RoundSysMenuButtonsDlg.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\sai\LOCALS~1\Temp\RSP15A.tmp" 
+Creating temporary file "C:\DOCUME~1\sai\LOCALS~1\Temp\RSP15B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/RoundSysMenuButtons.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\VC++ 19 Days\RoundSysMenuButtons\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\sai\LOCALS~1\Temp\RSP15B.tmp" 
+Creating temporary file "C:\DOCUME~1\sai\LOCALS~1\Temp\RSP15C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/RoundSysMenuButtons.pdb" /debug /machine:I386 /out:"Debug/RoundSysMenuButtons.exe" /pdbtype:sept 
+".\Debug\RoundSysMenuButtons.obj"
+".\Debug\RoundSysMenuButtonsDlg.obj"
+".\Debug\StdAfx.obj"
+".\Debug\RoundSysMenuButtons.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\sai\LOCALS~1\Temp\RSP15C.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+RoundSysMenuButtons.cpp
+RoundSysMenuButtonsDlg.cpp
+C:\VC++ 19 Days\RoundSysMenuButtons\RoundSysMenuButtonsDlg.cpp(610) : warning C4018: '==' : signed/unsigned mismatch
+C:\VC++ 19 Days\RoundSysMenuButtons\RoundSysMenuButtonsDlg.cpp(635) : warning C4018: '==' : signed/unsigned mismatch
+C:\VC++ 19 Days\RoundSysMenuButtons\RoundSysMenuButtonsDlg.cpp(655) : warning C4018: '==' : signed/unsigned mismatch
+Generating Code...
+C:\VC++ 19 Days\RoundSysMenuButtons\RoundSysMenuButtonsDlg.cpp(728) : warning C4715: 'CRoundSysMenuButtonsDlg::HitTest' : not all control paths return a value
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/RoundSysMenuButtons.bsc"  ".\Debug\StdAfx.sbr" ".\Debug\RoundSysMenuButtons.sbr" ".\Debug\RoundSysMenuButtonsDlg.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+RoundSysMenuButtons.exe - 0 error(s), 4 warning(s)
+</pre>
+</body>
+</html>
