@@ -176,8 +176,8 @@ void Polyphony::noteOff( INT16 pitch )
 
 void Polyphony::startVoice( UINT16 voice, FLOAT pitch, FLOAT gate )
 {
-    //if( numSounding_ == 0 ) 
-    //    synth_->beginProfiling();
+    if( numSounding_ == 0 ) 
+        synth_->beginProfiling();
 	
     UINT16 state = NoteOn | (hold_ ? NoteHold : 0);
     voices_[voice].init( voice, state, pitch, gate, tags_ );
@@ -207,8 +207,8 @@ void Polyphony::endVoice( UINT16 voice )
 		updateSoundingVoices();
 	}
 	ASSERT( numSounding_ >= 0 );
-    //if( numSounding_ == 0 )
-    //    synth_->endProfiling();
+    if( numSounding_ == 0 )
+        synth_->endProfiling();
 }
 
 

@@ -32,20 +32,20 @@ public:
 	};
 
 protected:
-	void addPhase( FLOAT phase );
-	void addPhaseOffset( FLOAT phaseOffset );
+	//void addPhase( FLOAT phase );
+	//void addPhaseOffset( FLOAT phaseOffset );
 
 	void setSampleRate( INT32 newRate, INT32 oldRate );
     void setTuning( FLOAT paramValue );
     void setFineTuning( FLOAT paramValue );
-    void setRate( UINT16 voice );
+    void setIncrement( UINT16 voice );
 
 	void makeWaveTable();
 
-	Buffer<FLOAT> bufRate_, bufTime_, bufAmplitude_, bufFreq_;
-	FLOAT *time_, *amplitude_, *rate_, *freq_;
+	Buffer<FLOAT> bufIncrement_, bufPhaseIndex_, bufAmplitude_, bufFreq_;
+	FLOAT *phaseIndex_, *amplitude_, *increment_, *freq_;
 	
-	FLOAT phaseOffset_;
+	//FLOAT phaseOffset_;
 
 	double tuning_;
 	double fineTuning_;
@@ -63,9 +63,9 @@ protected:
 
 
 
-inline void SineOscil::setRate( UINT16 voice )
+inline void SineOscil::setIncrement( UINT16 voice )
 {
-    rate_[ voice ] = (tableSize_ * freq_[ voice ] * (FLOAT)tuning_ * (FLOAT)fineTuning_) / sampleRate_;
+    increment_[voice] = (tableSize_ * freq_[voice] * (FLOAT)tuning_ * (FLOAT)fineTuning_) / sampleRate_;
 }
 
 

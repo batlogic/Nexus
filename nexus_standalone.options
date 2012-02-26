@@ -6,13 +6,13 @@
     <Columns sort="1" dir="2">7,31,31,31</Columns>
     <Window left="156" top="147" right="1064" bottom="687" state="5" />
     <Tuning>0</Tuning>
-    <AudioPort>6</AudioPort>
-    <AudioOutDevice>Lautsprecher (High Definition Audio-Gerät)</AudioOutDevice>
-    <AudioOutChannel>0</AudioOutChannel>
+    <AudioPort>5</AudioPort>
+    <AudioOutDevice>ASIO4ALL v2</AudioOutDevice>
+    <AudioOutChannel>2</AudioOutChannel>
     <MidiInPorts>
         <Port>In From MIDI Yoke:  1</Port>
     </MidiInPorts>
-    <BufferSize>2048</BufferSize>
+    <BufferSize>512</BufferSize>
     <SampleRate>44100</SampleRate>
     <AudioRun>1</AudioRun>
 </NexusOptions>

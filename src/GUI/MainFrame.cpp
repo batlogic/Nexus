@@ -25,7 +25,6 @@ LRESULT CALLBACK NexusWindowProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPa
     
     if( result == 0 )
     {
-        TRACE( "msg=%d\n", msg );
 		switch( msg )
         {
             case WM_CLOSE: 

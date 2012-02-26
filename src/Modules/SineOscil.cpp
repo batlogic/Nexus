@@ -25,7 +25,7 @@ UINT16 SineOscil::tableSize_ = 2048;
 
 SineOscil::SineOscil() 
 	: Module(),
-	  phaseOffset_( 0.0f ),
+	  //phaseOffset_( 0.0f ),
 	  tuning_( 1.0 ),
 	  fineTuning_( 1.0 ),
       ptrFmInput_( NULL ),
@@ -48,10 +48,10 @@ SineOscil::~SineOscil()
 
 void SineOscil::initData()
 {
-	time_      = bufTime_.resize( numVoices_, 0.0f );
-	amplitude_ = bufAmplitude_.resize( numVoices_, 1.0f );
-	rate_      = bufRate_.resize( numVoices_, 20.43356f );	// 440 Hz
-	freq_      = bufFreq_.resize( numVoices_, 440.0f );
+	phaseIndex_ = bufPhaseIndex_.resize( numVoices_, 0.0f );
+	amplitude_  = bufAmplitude_.resize( numVoices_, 1.0f );
+	increment_  = bufIncrement_.resize( numVoices_, 20.43356f );	// 440 Hz
+	freq_       = bufFreq_.resize( numVoices_, 440.0f );
 }
 
 
@@ -88,7 +88,7 @@ void SineOscil::setSampleRate( INT32 newRate, INT32 oldRate )
 	Module::setSampleRate( newRate, oldRate );
 
 	for( UINT16 i=0; i<numVoices_; i++ ) {
-		rate_[ i ] = oldRate * rate_[ i ] / newRate;
+		increment_[ i ] = oldRate * increment_[ i ] / newRate;
 	}
 }
 
@@ -113,7 +113,7 @@ void SineOscil::setParameter( UINT16 paramId, FLOAT value, FLOAT modulation, INT
                 freq = ( value - 261.62557f ) * modulation + 261.62557f;    
             }
         	freq_[ voice ] = freq;
-	        setRate( voice );
+	        setIncrement( voice );
         }
         break;
 	case PARAM_AMPLITUDE: 
@@ -134,7 +134,7 @@ void SineOscil::setTuning( FLOAT paramValue )
 	tuning_      = pow( 2, pitch / 12 );
 
 	for( UINT16 i=0; i<numVoices_; i++ ) {
-        setRate( i );
+        setIncrement( i );
 	}
 }
 
@@ -145,28 +145,27 @@ void SineOscil::setFineTuning( FLOAT paramValue )
     fineTuning_  = pow( 2, paramValue / 12 );
 
 	for( UINT16 i=0; i<numVoices_; i++ ) {
-		setRate( i );
+		setIncrement( i );
 	}
 }
 
 
-void SineOscil::addPhase( FLOAT phase )
-{
-	// Add a time in cycles (one cycle = tableSize_).
-	for( UINT16 i=0; i<numVoices_; i++ ) {
-		time_[i] += tableSize_ * phase;
-	}
-}
-
-
-void SineOscil::addPhaseOffset( FLOAT phaseOffset )
-{
-	// Add a phase offset relative to any previous offset value.
-	for( UINT16 i=0; i<numVoices_; i++ ) {
-		time_[i] += ( phaseOffset - phaseOffset_ ) * tableSize_;
-	}
-	phaseOffset_ = phaseOffset;
-}
+//void SineOscil::addPhase( FLOAT phase )
+//{
+//	for( UINT16 i=0; i<numVoices_; i++ ) {
+//		phaseIndex_[i] += tableSize_ * phase;
+//	}
+//}
+//
+//
+//void SineOscil::addPhaseOffset( FLOAT phaseOffset )
+//{
+//	// Add a phase offset relative to any previous offset value.
+//	for( UINT16 i=0; i<numVoices_; i++ ) {
+//		phaseIndex_[i] += ( phaseOffset - phaseOffset_ ) * tableSize_;
+//	}
+//	phaseOffset_ = phaseOffset;
+//}
 
 
 void SineOscil::makeWaveTable()
@@ -187,28 +186,23 @@ void SineOscil::makeWaveTable()
 void SineOscil::processAudio() throw()
 {
 	UINT32 maxVoices = min( numVoices_, polyphony_->numSounding_ );
-    UINT32 index;
-	UINT32 v;
-    UINT32 i;
-    FLOAT tick;
-	FLOAT alpha;
-    FLOAT time;
+    UINT32 index, v, i;
+    FLOAT tick, frac, pos;
     
 	for( i=0; i<maxVoices; i++ )
 	{
-		v    = mono_ ? 0 : polyphony_->soundingVoices_[i];
-		time = time_[v];
+		v   = mono_ ? 0 : polyphony_->soundingVoices_[i];
+		pos = phaseIndex_[v];
         
-		while( time < 0.0 ) time += tableSize_;         // Check limits of time address
-		while( time >= tableSize_ ) time -= tableSize_;
+		while( pos < 0.0 ) pos += tableSize_;         // Check limits of table address
+		while( pos >= tableSize_ ) pos -= tableSize_;
 
-        index = (UINT32)time;
-		alpha = time - index;
+        index = (UINT32)pos;
+		frac  = pos - index;
 		tick  = table_[index];
-		tick += alpha * ( table_[index + 1] - tick );
-        tick *= amplitude_[v];
+		tick += amplitude_[v] * frac * ( table_[index + 1] - tick );
 
-    	time_[v] = time + rate_[v];                     // Increment time, which can be negative.
+    	phaseIndex_[v] = pos + increment_[v];                    
         audioOut_.putAudio( tick, v );
 	}
 }
@@ -216,30 +210,27 @@ void SineOscil::processAudio() throw()
 
 void SineOscil::processAudioFm()
 {
-	FLOAT tick, time;
-	UINT32 index;
-	FLOAT alpha;
-	UINT16 v, i;
-    UINT16 maxVoices = min( numVoices_, polyphony_->numSounding_ );
+	UINT16 maxVoices = min( numVoices_, polyphony_->numSounding_ );
+	FLOAT tick, pos, frac;
+	UINT32 index, v, i;
 
 	for( i=0; i<maxVoices; i++ )
 	{
-		v    = mono_ ? 0 : polyphony_->soundingVoices_[i];
-		time = time_[v];
+		v   = mono_ ? 0 : polyphony_->soundingVoices_[i];
+		pos = phaseIndex_[v];
         
-        time          += ptrFmInput_[v];                // FM
+        pos += ptrFmInput_[v];							// FM
         ptrFmInput_[v] = 0.f;
 		
-		while( time < 0.0 ) time += tableSize_;         // Check limits of time address
-		while( time >= tableSize_ ) time -= tableSize_;
+		while( pos < 0.0 ) pos += tableSize_;         // Check limits of table address
+		while( pos >= tableSize_ ) pos -= tableSize_;
 
-        index = (UINT32)time;
-		alpha = time - index;
+        index = (UINT32)pos;
+		frac  = pos - index;
 		tick  = table_[index];
-		tick += alpha * ( table_[index + 1] - tick );
-        tick *= amplitude_[v];
+		tick += amplitude_[v] * frac * ( table_[index + 1] - tick );
 
-    	time_[v] = time + rate_[v];                     // Increment time, which can be negative.
+    	phaseIndex_[v] = pos + increment_[v]; 
         audioOut_.putAudio( tick, v );
 	}
 }
@@ -247,28 +238,26 @@ void SineOscil::processAudioFm()
 
 void SineOscil::processAudioAm()
 {
-	FLOAT tick;
-	UINT32 index;
-	FLOAT alpha, time;
-	UINT16 v, i;
-    UINT16 maxVoices = min( numVoices_, polyphony_->numSounding_ );
+	UINT16 maxVoices = min( numVoices_, polyphony_->numSounding_ );
+	FLOAT tick, pos, frac;
+	UINT32 index, v, i;
 
 	for( i=0; i<maxVoices; i++ )
 	{
-		v    = mono_ ? 0 : polyphony_->soundingVoices_[i];
-		time = time_[v];
+		v   = mono_ ? 0 : polyphony_->soundingVoices_[i];
+		pos = phaseIndex_[v];
         
-		while( time < 0.0 ) time += tableSize_;         // Check limits of time address
-		while( time >= tableSize_ ) time -= tableSize_;
+		while( pos < 0.0 ) pos += tableSize_;         // Check limits of table address
+		while( pos >= tableSize_ ) pos -= tableSize_;
 
-        index = (UINT16)time;
-		alpha = time - index;
+        index = (UINT16)pos;
+		frac  = pos - index;
 		tick  = table_[index];
-		tick += alpha * ( table_[index + 1] - tick );
+		tick += frac * ( table_[index + 1] - tick );
         tick *= amplitude_[v] + ptrAmInput_[v];
         ptrAmInput_[v] = 0.f;
 
-    	time_[v] = time + rate_[v];                     // Increment time, which can be negative.
+    	phaseIndex_[v] = pos + increment_[v];                     // table position, which can be negative.
         audioOut_.putAudio( tick, v );
 	}
 }
@@ -276,31 +265,29 @@ void SineOscil::processAudioAm()
 
 void SineOscil::processAudioFmAm()
 {
-	FLOAT tick;
-	UINT32 index;
-	FLOAT alpha, time;
-	UINT16 v, i;
-    UINT16 maxVoices = min( numVoices_, polyphony_->numSounding_ );
+	UINT16 maxVoices = min( numVoices_, polyphony_->numSounding_ );
+	FLOAT tick, pos, frac;
+	UINT32 index, v, i;
 
 	for( i=0; i<maxVoices; i++ )
 	{
-		v    = mono_ ? 0 : polyphony_->soundingVoices_[i];
-		time = time_[v];
+		v   = mono_ ? 0 : polyphony_->soundingVoices_[i];
+		pos = phaseIndex_[v];
         
-        time          += ptrFmInput_[v];                // FM
+        pos += ptrFmInput_[v];                         // FM
         ptrFmInput_[v] = 0.f;
 		
-		while( time < 0.0 ) time += tableSize_;         // Check limits of time address
-		while( time >= tableSize_ ) time -= tableSize_;
+		while( pos < 0.0 ) pos += tableSize_;         // Check limits of table address
+		while( pos >= tableSize_ ) pos -= tableSize_;
 
-        index = (UINT16)time;
-		alpha = time - index;
+        index = (UINT16)pos;
+		frac  = pos - index;
 		tick  = table_[index];
-		tick += alpha * ( table_[index + 1] - tick );
+		tick += frac * ( table_[index + 1] - tick );
         tick *= amplitude_[v] + ptrAmInput_[v];
         ptrAmInput_[v] = 0.f;
 
-    	time_[v] = time + rate_[v];                     // Increment time, which can be negative.
+    	phaseIndex_[v] = pos + increment_[v];          
         audioOut_.putAudio( tick, v );
 	}
 }

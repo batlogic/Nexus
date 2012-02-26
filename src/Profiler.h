@@ -3,114 +3,151 @@
 #define PROFILER_H
 
 #include "Definitions.h"
+#include <intrin.h>
 
 
-class Profiler
+//-------------------------------------------------------
+// class PerformanceCounter
+//-------------------------------------------------------
+//
+class PerformanceCounter
 {
 public:
-	Profiler();
-	void begin();
-	double end();
-	void print();
+	PerformanceCounter() :
+		frequency_( 0 ),
+		first_( 0 ),
+		last_( 0 ),
+		diff_( 0 )
+	{
+		if( !QueryPerformanceFrequency( (LARGE_INTEGER*)&frequency_ )) {
+			frequency_ = (LONGLONG)0.0;
+		}
+		begin();
+	}
 
-	void beginCollecting( UINT32 max );
-	void collect( double value );
-	void endCollecting();
-	void average();
+	void begin() {
+		QueryPerformanceCounter( (LARGE_INTEGER*)&first_ );
+	}
+	
+	double end()
+	{
+		QueryPerformanceCounter( (LARGE_INTEGER*)&last_ );
+		diff_    = (((double)( last_ - first_ )) / ((double) frequency_ )); 
+		return diff_;
+	}
+
+	void print() {
+		TRACE( "%f sec\n", diff_ );
+	}
+
 
 	LONGLONG frequency_, first_, last_;
 	double diff_;
-    bool running_;
-
-	vector<double> collection_;
-	UINT32 collectCounter_;
-	UINT32 collectMax_;
 };
 
 
-inline Profiler::Profiler() :
-    frequency_( 0 ),
-    first_( 0 ),
-    last_( 0 ),
-    diff_( 0 ),
-    running_( false ),
-    collectCounter_( 0 ),
-    collectMax_( 0 )
+//-------------------------------------------------------
+// class TimeStampCounter
+//-------------------------------------------------------
+//
+class TimeStampCounter
 {
-    if( !QueryPerformanceFrequency( (LARGE_INTEGER*)&frequency_ )) {
-		frequency_ = (LONGLONG)0.0;
-	}
-	begin();
-}
-
-
-inline void Profiler::begin() 
-{
-    running_ = true;
-	QueryPerformanceCounter( (LARGE_INTEGER*)&first_ );
-}
-
-
-inline double Profiler::end() 
-{
-	QueryPerformanceCounter( (LARGE_INTEGER*)&last_ );
-    running_ = false;
-	diff_    = (((double)( last_ - first_ )) / ((double) frequency_ )); 
-	return diff_;
-}
-
-
-inline void Profiler::print()
-{
-	TRACE( "%f sec\n", diff_ );
-}
-
-
-inline void Profiler::beginCollecting( UINT32 max ) 
-{ 
-	if( collectMax_ == 0 ) {
-        collection_.resize( max ); 
-	    collectMax_ = max;
-    }
-}
-
-
-
-inline void Profiler::collect( double value )
-{
-	if( collectCounter_ < collectMax_ )	{
-		collection_[ collectCounter_++ ] = value;
-	}
-}
-
-
-inline void Profiler::endCollecting()
-{
-	for( UINT32 i=0; i<collectCounter_; i++ )
+public:
+	TimeStampCounter() :
+		first_( 0 ),
+		last_( 0 ),
+		diff_( 0 )
 	{
-		TRACE( "%d: %d\n", i, collection_[i ] );
+		begin();
 	}
-	collection_.resize( 0 );
-	collectMax_ = 0;
-}
 
+	void begin() {
+		first_ = readTSC();
+	}
+	
+	double end()
+	{
+		last_ = readTSC();
+		diff_ = (double)( last_ - first_ );
+		return diff_;
+	}
 
-inline void Profiler::average()
+	void print() {
+		TRACE( "%f sec\n", diff_ );
+	}
+
+protected:
+	LONGLONG readTSC()          // Returns time stamp counter 
+	{
+		int dummy[4];           // For unused returns 
+		volatile int dontSkip;  // Volatile to prevent optimizing 
+		__int64 clock;          // Time 
+		__cpuid(dummy, 0);      // Serialize 
+		dontSkip = dummy[0];    // Prevent optimizing away cpuid 
+		clock = __rdtsc();      // Read time 
+		__cpuid(dummy, 0);      // Serialize again 
+		dontSkip = dummy[0];    // Prevent optimizing away cpuid 
+		return clock; 
+	} 
+
+	LONGLONG first_, last_;
+	double diff_;
+};
+
+//-------------------------------------------------------
+// class PerformanceAverage
+//-------------------------------------------------------
+class PerformanceAverage
 {
-	double sum = 0;
+public:
+	PerformanceAverage() :
+		counter_(0),
+		max_(0)
+	{}
 
-	for( UINT32 i=0; i<collectCounter_; i++ ) {
-		sum += collection_[ i ];
+	void resize( UINT32 max )
+	{ 
+		if( max_ == 0 ) {
+			collection_.resize( max ); 
+			max_ = max;
+		}
 	}
-	TRACE( "avg=%g\n", sum / collectCounter_ );
 
-	collection_.resize( 0 );
-	collectCounter_ = 0;
-	collectMax_     = 0;
-}
+	void add( double value )
+	{
+		if( counter_ < max_ )	{
+			collection_[ counter_++ ] = value;
+		}
+	}
 
+	void end()
+	{
+		for( UINT32 i=0; i<counter_; i++ )
+		{
+			TRACE( "%d: %d\n", i, collection_[i ] );
+		}
+		collection_.resize( 0 );
+		max_ = 0;
+	}
 
+	void average()
+	{
+		double sum = 0;
 
+		for( UINT32 i=0; i<counter_; i++ ) {
+			sum += collection_[ i ];
+		}
+		TRACE( "avg=%g\n", sum / counter_ );
+
+		collection_.resize( 0 );
+		counter_ = 0;
+		max_     = 0;
+	}
+
+	vector<double> collection_;
+	UINT32 counter_;
+	UINT32 max_;
+};
 
 
 #endif PROFILER_H
