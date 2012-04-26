@@ -77,16 +77,17 @@ public:
 	}
 
 protected:
-	LONGLONG readTSC()          // Returns time stamp counter 
+	LONGLONG readTSC()            // Returns time stamp counter 
 	{
-		int dummy[4];           // For unused returns 
-		volatile int dontSkip;  // Volatile to prevent optimizing 
-		__int64 clock;          // Time 
-		__cpuid(dummy, 0);      // Serialize 
-		dontSkip = dummy[0];    // Prevent optimizing away cpuid 
-		clock = __rdtsc();      // Read time 
-		__cpuid(dummy, 0);      // Serialize again 
-		dontSkip = dummy[0];    // Prevent optimizing away cpuid 
+		int dummy[4];             // For unused returns 
+		volatile int dontSkip;    // Volatile to prevent optimizing 
+		__int64 clock;            // Time 
+		__cpuid(dummy, 0);        // Serialize 
+		dontSkip = dummy[0];      // Prevent optimizing away cpuid 
+		//clock = ReadTimeStampCounter();  // Read clock cycles since last reset
+		clock = __rdtsc();  // Read clock cycles since last reset
+		__cpuid(dummy, 0);        // Serialize again 
+		dontSkip = dummy[0];      // Prevent optimizing away cpuid 
 		return clock; 
 	} 
 
@@ -105,11 +106,12 @@ public:
 		max_(0)
 	{}
 
-	void resize( UINT32 max )
+	void start( UINT32 max )
 	{ 
 		if( max_ == 0 ) {
 			collection_.resize( max ); 
 			max_ = max;
+			counter_ = 0;
 		}
 	}
 
@@ -120,17 +122,7 @@ public:
 		}
 	}
 
-	void end()
-	{
-		for( UINT32 i=0; i<counter_; i++ )
-		{
-			TRACE( "%d: %d\n", i, collection_[i ] );
-		}
-		collection_.resize( 0 );
-		max_ = 0;
-	}
-
-	void average()
+	void finish()
 	{
 		double sum = 0;
 
@@ -138,7 +130,11 @@ public:
 			sum += collection_[ i ];
 		}
 		TRACE( "avg=%g\n", sum / counter_ );
+		reset();
+	}
 
+	void reset()
+	{
 		collection_.resize( 0 );
 		counter_ = 0;
 		max_     = 0;

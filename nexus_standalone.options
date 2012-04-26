@@ -7,12 +7,12 @@
     <Window left="156" top="147" right="1064" bottom="687" state="5" />
     <Tuning>0</Tuning>
     <AudioPort>5</AudioPort>
-    <AudioOutDevice>ASIO4ALL v2</AudioOutDevice>
-    <AudioOutChannel>2</AudioOutChannel>
+    <AudioOutDevice>M-Audio FireWire ASIO</AudioOutDevice>
+    <AudioOutChannel>0</AudioOutChannel>
     <MidiInPorts>
-        <Port>In From MIDI Yoke:  1</Port>
+        <Port>Ozonic Keyboard MIDI</Port>
     </MidiInPorts>
-    <BufferSize>512</BufferSize>
+    <BufferSize>256</BufferSize>
     <SampleRate>44100</SampleRate>
     <AudioRun>1</AudioRun>
 </NexusOptions>

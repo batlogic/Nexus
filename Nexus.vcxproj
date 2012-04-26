@@ -136,7 +136,7 @@
       </Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>"C:\Program Files\stampver\StampVer.exe" -v$(ProjectDir)stampver.inf -o3 -i4 -j4 $(TargetPath)</Command>
+      <Command>StampVer.exe -v$(ProjectDir)stampver.inf -o3 -i4 -j4 $(TargetPath)</Command>
       <Outputs>$(TargetDir)dummy;%(Outputs)</Outputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>

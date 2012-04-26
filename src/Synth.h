@@ -74,8 +74,8 @@ public:
 	void compile( Module* master );
     bool containsModule( Module* module );
 
-    void beginProfiling()   { perfAverage_.resize( 100000 );	}
-    void endProfiling()     { perfAverage_.average(); }
+    void beginProfiling()   { perfAverage_.start( 100000 );	}
+    void endProfiling()     { perfAverage_.finish(); }
 
 protected:
 	void setRunning( bool ready );
@@ -96,8 +96,8 @@ protected:
     FLOAT dummyMaster_;
     FLOAT* master_;
 
-	//PerformanceCounter perfCounter_;
-	TimeStampCounter perfCounter_;
+	PerformanceCounter perfCounter_;
+	//TimeStampCounter perfCounter_;
 	PerformanceAverage perfAverage_;
 };
 
@@ -137,7 +137,7 @@ __forceinline void Synth::processReplacing( FLOAT** inputs, FLOAT** outputs, INT
 		*out2++ = *master_;
 	}
 	
-    double timePerFrame = perfCounter_.end() / (double)numFrames;
+	double timePerFrame = perfCounter_.end() / (double)numFrames;
     perfAverage_.add( timePerFrame );
 }
 

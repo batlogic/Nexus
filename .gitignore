@@ -5,3 +5,8 @@ VstDebug/*
 VstRelease/*
 RtDebug/*
 RtRelease/*
+Tools/*
+stampver.inf
+*.exe
+*.sdf
+*.suo
