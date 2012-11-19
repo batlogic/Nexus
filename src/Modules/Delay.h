@@ -18,13 +18,13 @@ public:
 	void setParameter( UINT16 paramId, FLOAT value, FLOAT modulation=0.f, INT16 voice=-1 );
 
 	enum ParamId {
-		PARAM_DELAY    = 1,
-		PARAM_FEEDBACK = 2,
-		PARAM_GAIN     = 3
+		PARAM_DELAYTIME = 1,
+		PARAM_FEEDBACK  = 2,
+		PARAM_GAIN      = 3
 	};
 
 protected:
-	UINT32 delay_;
+	UINT32 delayTime_;
 	FLOAT feedback_;
 	FLOAT gain_;
 	UINT32 bufferSize_;

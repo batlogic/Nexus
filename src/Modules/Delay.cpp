@@ -4,7 +4,7 @@
 
 Delay::Delay()
 	: Module(),
-	delay_( 0 ),
+	delayTime_( 0 ),
 	feedback_( 0 ),
 	gain_( 0 ),
     buffer_( NULL ),
@@ -13,7 +13,7 @@ Delay::Delay()
 {
     inPorts_.push_back( &audioIn_ );
 	outPorts_.push_back( &audioOut_ );
-    ptrProcessAudio_ = static_cast< PtrProcess >( &Delay::processAudio );
+    ptrAudioFunc_ = static_cast< PtrAudioFunc >( &Delay::processAudio );
 }
 
 
@@ -33,9 +33,9 @@ void Delay::initInPorts()
 void Delay::setParameter( UINT16 paramId, FLOAT value, FLOAT modulation, INT16 voice ) 
 {
 	switch( paramId ) {
-	case PARAM_DELAY:	 delay_ = (INT64)( value * (FLOAT)(bufferSize_ - 1)); break;
-	case PARAM_FEEDBACK: feedback_ = value; break;
-	case PARAM_GAIN:	 gain_ = value; break;
+	case PARAM_DELAYTIME: delayTime_ = (INT64)( value * (FLOAT)(bufferSize_ - 1)); break;
+	case PARAM_FEEDBACK:  feedback_ = value; break;
+	case PARAM_GAIN:	  gain_ = value; break;
 	}
 }
 
@@ -48,7 +48,7 @@ void Delay::resume()
 
 void Delay::processAudio() throw()
 {
-	FLOAT value, input;
+	FLOAT output, input;
     UINT32 index;
     UINT16 v;
     
@@ -58,14 +58,14 @@ void Delay::processAudio() throw()
         ptrAudioIn_[v] = 0.f;
 
 		index          = v * bufferSize_ + cursor_[v];
-		value          = buffer_[index];
+		output         = buffer_[index];
 
-		buffer_[index] = input + value * feedback_;
+		buffer_[index] = input + output * feedback_;
 
-		if( ++cursor_[v] >= delay_ ) {
+		if( ++cursor_[v] >= delayTime_ ) {
 			cursor_[v] = 0;
 		}
-        audioOut_.putAudio( input + value * gain_, v );
+        audioOut_.putAudio( input + output * gain_, v );
 	}
 }
 

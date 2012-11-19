@@ -11,9 +11,9 @@ class ModuleKit;
 class ModuleData;
 
 
-// Pointer to processAudio()
+// Pointer to audio processing function
 // Allows replacing methods at runtime
-typedef void (Module::*PtrProcess)(void) throw();
+typedef void (Module::*PtrAudioFunc)(void) throw();
 
 
 class Module : public MidiListener
@@ -46,8 +46,7 @@ public:
     virtual void onController( UINT16 eventNum, FLOAT value );
     virtual void onPitchbend( FLOAT value ) {}
 
-    PtrProcess ptrProcessAudio_;
-    virtual void portConnected( AudioIn* port ) {}
+    PtrAudioFunc ptrAudioFunc_;
     
     ModuleData* data_;
     UINT16 renderType_;

@@ -9,7 +9,7 @@
     <LocalDebuggerCommandArguments>
     </LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommand>C:\AudioPrograms\Tools\VSTHost_1.45\vsthost.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommand>C:\Audio\Tools\VSTHost_1.47\vsthost.exe</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">
     <LocalDebuggerCommand>C:\Audio\Tools\MiniHost\MiniHost.exe</LocalDebuggerCommand>

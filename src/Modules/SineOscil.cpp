@@ -68,16 +68,16 @@ void SineOscil::checkPorts()
     bool am = amInput_.isConnected();
 
     if( fm == false && am == false ) {
-        ptrProcessAudio_ = static_cast< PtrProcess >( &SineOscil::processAudio );
+        ptrAudioFunc_ = static_cast< PtrAudioFunc >( &SineOscil::processAudio );
     }
     else if( fm == true && am == false ) {
-        ptrProcessAudio_ = static_cast< PtrProcess >( &SineOscil::processAudioFm );
+        ptrAudioFunc_ = static_cast< PtrAudioFunc >( &SineOscil::processAudioFm );
     }
     else if( fm == false && am == true ) {
-        ptrProcessAudio_ = static_cast< PtrProcess >( &SineOscil::processAudioAm );
+        ptrAudioFunc_ = static_cast< PtrAudioFunc >( &SineOscil::processAudioAm );
     }
     else if( fm == true && am == true ) {
-        ptrProcessAudio_ = static_cast< PtrProcess >( &SineOscil::processAudioFmAm );
+        ptrAudioFunc_ = static_cast< PtrAudioFunc >( &SineOscil::processAudioFmAm );
     }
 }
 

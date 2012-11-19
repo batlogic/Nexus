@@ -73,7 +73,7 @@ const char* delayXml =
 		"<InPort id=2 label=\"Repeats\" style=1 />"
 		"<InPort id=3 label=\"Gain\" style=1 />"
 		"<OutPort id=0 label=\"Out\" />"
-        "<Param id=1 style=1 label=\"Time\" dflt=0.5 />"
+        "<Param id=1 style=1 label=\"Time\" dflt=0.5 unit=\"sec\" />"
 		"<Param id=2 style=1 label=\"Repeats\" dflt=0.5 />"
 		"<Param id=3 style=1 label=\"Gain\" min=0 max=1 dflt=0.5 steps=100 log=6 unit=\"db\" fmt=2 />"
 	"</Module>";

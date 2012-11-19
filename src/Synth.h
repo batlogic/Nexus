@@ -130,8 +130,8 @@ __forceinline void Synth::processReplacing( FLOAT** inputs, FLOAT** outputs, INT
                     (*m)->processControl();
 		    }
 
-            if( (*m)->ptrProcessAudio_ != NULL )
-                ((*m)->*(*m)->ptrProcessAudio_)();
+            if( (*m)->ptrAudioFunc_ != NULL )
+                ((*m)->*(*m)->ptrAudioFunc_)();
 	    }
 		*out1++ = *master_; 
 		*out2++ = *master_;
@@ -169,7 +169,7 @@ __forceinline void Synth::process( FLOAT** inputs, FLOAT** outputs, INT32 numFra
 		    }
 
             if( (*m)->renderType_ & RENDER_AUDIO )
-                ((*m)->*(*m)->ptrProcessAudio_)();
+                ((*m)->*(*m)->ptrAudioFunc_)();
 	    }
 		*out1++ += *master_;
 		*out2++ += *master_;

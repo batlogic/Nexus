@@ -68,9 +68,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RtDebug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(VCInstallDir)include;$(WindowsSdkDir)include;D:\Dev\C++\Lib\boost\boost_1_47_0;D:\Dev\C++\Lib\vstsdk2.4;$(ProjectDir)src</IncludePath>
+    <IncludePath>$(VCInstallDir)include;$(WindowsSdkDir)include;D:\Dev\C++\Lib\boost\boost_1_49_0;D:\Dev\C++\Lib\vstsdk2.4;$(ProjectDir)src</IncludePath>
     <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
-    <LibraryPath>$(VCInstallDir)lib;$(WindowsSdkDir)lib;$(ProjectDir)lib;</LibraryPath>
+    <LibraryPath>$(VCInstallDir)lib;$(WindowsSdkDir)lib;D:\Dev\C++\Lib\boost\boost_1_49_0\lib\i386;$(ProjectDir)lib</LibraryPath>
     <ReferencePath>$(VCInstallDir)lib</ReferencePath>
     <TargetExt>.exe</TargetExt>
     <IntDir>$(Configuration)\obj\</IntDir>
@@ -86,7 +86,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RtRelease|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
-    <IncludePath>$(VCInstallDir)include;$(WindowsSdkDir)include;D:\Dev\C++\Lib\boost\boost_1_47_0;$(ProjectDir)src</IncludePath>
+    <IncludePath>$(VCInstallDir)include;$(WindowsSdkDir)include;D:\Dev\C++\Lib\boost\boost_1_49_0;$(ProjectDir)src</IncludePath>
     <LibraryPath>$(VCInstallDir)lib;$(WindowsSdkDir)lib;$(ProjectDir)lib;D:\Dev\C++\Audio\STK_synth\Shiny\lib</LibraryPath>
     <TargetExt>.exe</TargetExt>
     <IntDir>$(Configuration)\obj\</IntDir>
@@ -136,7 +136,7 @@
       </Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>StampVer.exe -v$(ProjectDir)stampver.inf -o3 -i4 -j4 $(TargetPath)</Command>
+      <Command>"C:\bin\stampver\StampVer.exe" -v$(ProjectDir)stampver.inf -o3 -i4 -j4 $(TargetPath)</Command>
       <Outputs>$(TargetDir)dummy;%(Outputs)</Outputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
@@ -169,7 +169,7 @@
       </AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "C:\AudioPrograms\Vstplugins\Synth\$(TargetName)$(TargetExt)"</Command>
+      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "C:\Audio\Vstplugins\Synth\$(TargetName)$(TargetExt)"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Deploy</Message>

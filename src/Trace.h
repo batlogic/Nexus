@@ -11,9 +11,10 @@ public:
 	static void trace( const char* f, ... )
     {
 	    char s[1000];
-	    va_list marker;
-	    va_start( marker, f );
-	    vsprintf( s, f, marker );
+	    va_list ptr;
+	    va_start( ptr, f );
+	    vsprintf( s, f, ptr );
+        va_end( ptr );
 
     #ifdef _CONSOLE
         cerr << s;

@@ -50,10 +50,10 @@
             <Link source="7" out="0" in="0" value="1" label="Input[7]-&gt;Freq" />
         </Module>
         <Module id="4" label="ADSR" catalog="11" poly="1" x="315" y="124">
-            <Param id="2" value="0.103937" />
+            <Param id="2" value="0.0205164" />
             <Param id="3" value="0.204724" />
             <Param id="4" value="0.239458" />
-            <Param id="5" value="1.9" />
+            <Param id="5" value="0.447843" />
             <Link source="3" out="0" in="0" value="0.573643" label="Sine-&gt;In" />
             <Link source="7" out="1" in="1" value="1" label="Input[7]-&gt;Gate" />
         </Module>
@@ -75,8 +75,14 @@
             <Param id="1" value="0" />
             <Param id="2" value="0" />
         </Module>
-        <Module id="0" label="Master" catalog="0" poly="0" x="443" y="124">
+        <Module id="0" label="Master" catalog="0" poly="0" x="478" y="104">
             <Param id="0" value="0.753101" />
+            <Link source="1" out="0" in="0" value="1" label="Delay[1]-&gt;In" style="0" />
+        </Module>
+        <Module id="1" label="Delay" catalog="12" poly="0" x="420" y="177">
+            <Param id="1" value="1" />
+            <Param id="2" value="0.33" />
+            <Param id="3" value="0.5" />
             <Link source="4" out="0" in="0" value="1" label="ADSR[4]-&gt;In" style="0" />
         </Module>
     </Program>

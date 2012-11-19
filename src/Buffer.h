@@ -33,17 +33,17 @@ public:
 	// Creates a buffer, allocates memory and initializes the memory with
 	// the specified value.
 	//
-	// const FLOAT& value	the value used to initialize the memory
-	// size_t size			the size of memory to be allocated
+	// const T& value	the value used to initialize the memory
+	// size_t size		the size of memory to be allocated
 	//----------------------------------------------------
-	Buffer( const FLOAT& value, size_t size )
+	Buffer( const T& value, size_t size )
 	:	data_( NULL ), 
 		size_( size )
 	{
 		data_ = allocate( size_ );
 
 		if( data_ != NULL ) {
-			for( long i=0; i<(long)size_; i++ ) {
+			for( size_t i=0; i<size_; i++ ) {
 				data_[i] = value;
 			}
 		}

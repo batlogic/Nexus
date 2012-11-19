@@ -17,7 +17,7 @@ Module::Module() :
     renderType_( 0 ),
 	sampleRate_( SAMPLERATE ),
 	polyphony_( NULL ),
-    ptrProcessAudio_( NULL )
+    ptrAudioFunc_( NULL )
 {}
 
 

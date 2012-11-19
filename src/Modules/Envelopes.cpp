@@ -16,7 +16,7 @@ ADSREnv::ADSREnv() :
 	inPorts_.push_back( &audioIn_ );
 	outPorts_.push_back( &audioOut_ );
 
-    ptrProcessAudio_ = static_cast< PtrProcess >( &ADSREnv::processAudio );
+    ptrAudioFunc_ = static_cast< PtrAudioFunc >( &ADSREnv::processAudio );
 }
 
 

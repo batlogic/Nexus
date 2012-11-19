@@ -54,7 +54,7 @@
             <Param id="3" value="-0.05" />
             <Link source="1" out="0" in="0" value="1" label="MidiFreq[1]-&gt;Freq" />
         </Module>
-        <Module id="6" label="ADSR" catalog="11" poly="1" x="180" y="231">
+        <Module id="6" label="ADSR" catalog="11" poly="1" x="229" y="289">
             <Param id="2" value="0.9" dflt="0.25" max="10" steps="100" />
             <Param id="3" value="6.3" max="10" />
             <Param id="4" value="0.75" />

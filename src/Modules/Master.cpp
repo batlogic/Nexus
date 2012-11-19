@@ -8,7 +8,7 @@ Master::Master() :
     ptrAudioIn_( NULL )
 {
 	inPorts_.push_back( &audioIn_ );
-    ptrProcessAudio_ = static_cast< PtrProcess >( &Master::processAudio );
+    ptrAudioFunc_ = static_cast< PtrAudioFunc >( &Master::processAudio );
 }
 
 
