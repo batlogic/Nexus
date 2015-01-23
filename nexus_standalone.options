@@ -7,10 +7,12 @@
     <Window left="307" top="245" right="1215" bottom="785" state="5" />
     <Tuning>0</Tuning>
     <AudioPort>5</AudioPort>
-    <AudioOutDevice>GR-55</AudioOutDevice>
+    <AudioOutDevice>ASIO4ALL v2</AudioOutDevice>
     <AudioOutChannel>0</AudioOutChannel>
-    <MidiInPorts />
-    <BufferSize>432</BufferSize>
+    <MidiInPorts>
+        <Port>Oxygen 25</Port>
+    </MidiInPorts>
+    <BufferSize>512</BufferSize>
     <SampleRate>44100</SampleRate>
     <AudioRun>1</AudioRun>
 </NexusOptions>

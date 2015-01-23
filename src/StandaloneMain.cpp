@@ -13,7 +13,7 @@
 CpuPercentage percentage;
 
 
-DWORD WINAPI CpuPercentageThreadProc(LPVOID lpParam)
+WORD WINAPI CpuPercentageThreadProc(LPVOID lpParam)
 {
 	while (true)
 	{
