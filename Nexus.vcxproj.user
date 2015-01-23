@@ -6,10 +6,9 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VstDebug|Win32'">
-    <LocalDebuggerCommandArguments>
-    </LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>C:\bin\Audio\JucePluginHost\Nexus.filtergraph</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommand>C:\Audio\Tools\VSTHost_1.47\vsthost.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommand>C:\bin\Audio\JucePluginHost\JucePluginHost.exe</LocalDebuggerCommand>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VstRelease|Win32'">
     <LocalDebuggerCommand>C:\Audio\Tools\MiniHost\MiniHost.exe</LocalDebuggerCommand>

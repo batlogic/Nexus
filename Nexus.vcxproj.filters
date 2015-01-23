@@ -174,7 +174,6 @@
     <ClCompile Include="src\Modules\Master.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="src\CpuPercentage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ModuleData.h" />
@@ -383,7 +382,6 @@
     <ClInclude Include="src\Modules\Master.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="src\CpuPercentage.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />

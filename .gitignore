@@ -7,6 +7,9 @@ RtDebug/*
 RtRelease/*
 Tools/*
 stampver.inf
+.DS_Store
 *.exe
 *.sdf
 *.suo
+*.sdf
+*.opensdf

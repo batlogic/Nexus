@@ -209,6 +209,7 @@ void ADSREnv::processControl() throw()
 			    state_[v] = StateDone;
 
                 if( sentinel_ ) {
+					//TODO: use gallant::signal
                     polyphony_->endVoice( v );
                 }
 		    }

@@ -70,7 +70,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(VCInstallDir)include;$(WindowsSdkDir)include;D:\Dev\C++\Lib\boost\boost_1_49_0;D:\Dev\C++\Lib\vstsdk2.4;$(ProjectDir)src</IncludePath>
     <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
-    <LibraryPath>$(VCInstallDir)lib;$(WindowsSdkDir)lib;D:\Dev\C++\Lib\boost\boost_1_49_0\lib\i386;$(ProjectDir)lib</LibraryPath>
+    <LibraryPath>$(VCInstallDir)lib;$(WindowsSdkDir)lib;D:\Dev\C++\Lib\boost\boost_1_57_0\lib\i386;$(ProjectDir)lib</LibraryPath>
     <ReferencePath>$(VCInstallDir)lib</ReferencePath>
     <TargetExt>.exe</TargetExt>
     <IntDir>$(Configuration)\obj\</IntDir>
@@ -169,7 +169,7 @@
       </AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "C:\Audio\Vstplugins\Synth\$(TargetName)$(TargetExt)"</Command>
+      <Command>copy "$(OutDir)$(TargetName)$(TargetExt)" "F:\Devices\Vstplugins\Test\$(TargetName)$(TargetExt)"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Deploy</Message>
